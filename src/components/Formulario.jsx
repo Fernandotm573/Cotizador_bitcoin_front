@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
+import Error from './Error';
 import useSelectMoneda from '../hooks/useSelectMoneda';
 import {monedas} from '../data/Monedas'
+
 
 
 // Styled Components
@@ -50,7 +52,6 @@ const Formulario = () => {
                     id: cripto.CoinInfo.Name,
                     nombre: cripto.CoinInfo.FullName
                 }
-
                 return objeto
             })
             setCriptos(arrayCriptos)
@@ -66,15 +67,16 @@ const Formulario = () => {
         //Validacion del Formulario Vacio
         if([moneda, criptomoneda].includes('')){
             setError(true)
-
             return
         }
+        setError(false)
         
     }
 
+    //Formulario
     return (
         <>
-           {error && <p>Todos los campos son obligatorios</p>}
+           {error && <Error>Todos los campos son obligatorios</Error>}
 
            <form
              onSubmit={handleSubmit}
