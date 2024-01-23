@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import Formulario from './components/Formulario';
 import Resultado from './components/Resultado';
 import Spinner from './components/Spinner';
-//import ImagenCripto from './img/img_bitcoint.jpg';
 import ImagenCripto from './img/bitcoin-3132717_1280.jpg';
 
 
