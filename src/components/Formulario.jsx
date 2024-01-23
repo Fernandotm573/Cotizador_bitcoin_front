@@ -6,14 +6,12 @@ import { monedas } from "../data/Monedas";
 
 
 
-//import { monedas } from '../data/monedas'
-
 const InputSubmit = styled.input`
     background-color: #9497FF;
     border: none;
     width: 100%;
     padding: 10px;
-    color: #FFF;
+    color: #fff;
     font-weight: 700;
     text-transform: uppercase;
     font-size: 20px;
@@ -29,8 +27,8 @@ const InputSubmit = styled.input`
 const Formulario = ({ setMonedas }) => {
     const [criptos, setCriptos] = useState([]);
     const [error, setError] = useState(false);
-    const [moneda, SelectMonedas] = useSelectMonedas('Elige tu Moneda', monedas);
-    const [criptomoneda, SelectCriptomoneda] = useSelectMonedas('Elige tu Criptomoneda', criptos);
+    const [moneda, SelectMonedas] = useSelectMonedas('Selecciona la Moneda', monedas);
+    const [criptomoneda, SelectCriptomoneda] = useSelectMonedas('Selecciona la Criptomoneda', criptos);
   
     useEffect(() => {
       const consultarAPI = async () => {
@@ -69,18 +67,17 @@ const Formulario = ({ setMonedas }) => {
         const respuesta = await fetch(url);
         const resultado = await respuesta.json();
   
-        // Hacer algo con la respuesta (puede ser establecer un estado, mostrar en consola, etc.)
+        
         console.log('Resultado de la API:', resultado);
   
-        // Puedes pasar la respuesta a la función setMonedas si es necesario.
+        // Se puede pasar la respuesta a la función setMonedas si es necesario.
         setMonedas({
           moneda,
           criptomoneda,
-          resultado, // Si necesitas pasar la respuesta al estado, por ejemplo.
+          resultado, 
         });
       } catch (error) {
         console.error('Error al obtener datos de la API:', error.message);
-        // Manejo del error aquí.
       }
     };
   

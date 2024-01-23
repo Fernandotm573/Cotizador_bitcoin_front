@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 
 const Contenedor = styled.div`
-    color: #FFF;
+    color: #ffffff;
     font-family: 'Lato', sans-serif;
 
     display: flex;
@@ -29,7 +29,7 @@ const Precio = styled.p`
 `
 
 const Resultado = ({resultado}) => {
-    const { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, IMAGEURL, LASTUPDATE} = resultado
+    const { PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, IMAGEURL, LASTUPDATE, MARKET} = resultado
     return (
         <Contenedor>
             <Imagen 
@@ -42,6 +42,7 @@ const Resultado = ({resultado}) => {
                 <Texto>Precio más bajo del día: <span>{LOWDAY}</span></Texto>
                 <Texto>Variación últimas 24 horas: <span>{CHANGEPCT24HOUR}</span></Texto>
                 <Texto>Última Actualización: <span>{LASTUPDATE}</span></Texto>
+                <Texto>Mercado: <span>{MARKET}</span></Texto>
             </div>
         </Contenedor>
     )
