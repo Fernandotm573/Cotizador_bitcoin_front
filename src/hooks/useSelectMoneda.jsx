@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 // Styled Component
 const Label = styled.label`
-    color: #fff;
+    color: #211414;
     display: block;
     font-family: 'Lato' sans-serif;
     font-size: 24px;
@@ -11,12 +11,16 @@ const Label = styled.label`
     margin: 15px 0;
 `
 const Select = styled.select`
+    background-color: grey;
+    border: solid 2px #000;
+    border-color: #000;
     width: 100%;
     padding: 14px;
     font-size: 18px;
-    border-radius: 10px;
+    border-radius: 50px;
 `
 
+//Hook Personalizado
 const useSelectMoneda = (label, opciones) => {
 
     //UseState
